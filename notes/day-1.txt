@@ -1,0 +1,16 @@
+1. JavaScript - advanced
+	a. creating object
+	b. this keyword
+	c. new features
+		i. let 
+		ii. const
+
+2. React 
+	a. SPA vs server-side framework
+	b. component
+	c. create React App
+
+3. React Features:
+
+variable hoisting:
+local variables in the function gets registered in the 'variable object' created for the function context

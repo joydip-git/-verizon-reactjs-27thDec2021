@@ -1,21 +1,27 @@
-function outer() {
-    //1.
-    //this will be stored in variable object of the function
-    var a = 10
-    console.log(a)
+//constructor function
+function person(name, id, salary) {
+    //value properties
+    this.personName = name
+    this.personId = id
+    this.personSalary = salary
 
-    //2.
-    //will be stored in the owner of the function
-    this.x = 20
-    //console.log(this.x)
-    console.log(this)
+    //functional property
+    // this.print = function () {
+    //     return this.personName + ' ' + this.personId + ' ' + this.personSalary
+    // }
 }
-//3.
-console.log(outer.prototype)
+person.prototype.print = function () {
+    return this.personName + ' ' + this.personId + ' ' + this.personSalary
+}
+console.log(person.prototype)
 
-//1. window object is the owner of the function which is referred by 'this' keyword in the function
-//outer()
+const anilPerson = new person('anil', 1, 1000)
+const sunilPerson = new person('sunil', 2, 2000)
 
-//2. in this case a fresh new object is created by JS engine for outer function, which will be referred by this keyword in the function. window object of DOM is longer the owner
-const newOuterOwner = new outer()
-console.log(newOuterOwner.x)
+//accessing value properties
+console.log(anilPerson.personName)
+console.log(sunilPerson['personSalary'])
+
+//accessing functional properties
+console.log(anilPerson.print())
+console.log(sunilPerson.print())

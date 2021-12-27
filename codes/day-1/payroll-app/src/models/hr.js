@@ -1,4 +1,5 @@
-class Hr extends Employee {
+import { Employee } from "./employee";
+export class Hr extends Employee {
     #gratuitypay
     constructor(name, id, basic, da, hra, gratuity) {
         super(name, id, basic, da, hra)
@@ -9,3 +10,6 @@ class Hr extends Employee {
         this.totalsalary += this.#gratuitypay
     }
 }
+/**
+ * {Hr:Hr}
+ */

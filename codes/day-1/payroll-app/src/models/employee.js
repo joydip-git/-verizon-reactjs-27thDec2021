@@ -1,4 +1,4 @@
-class Employee {
+export class Employee {
     #name
     #id
     #basicpay
@@ -29,3 +29,12 @@ class Employee {
         this.#totalsalary = this.#basicpay + this.#dapay + this.#hrapay
     }
 }
+
+export const add = (a, b) => a + b
+
+/**exports object
+ * {
+ *    Employee:Employee,
+ *    add: add
+ *  }
+ */

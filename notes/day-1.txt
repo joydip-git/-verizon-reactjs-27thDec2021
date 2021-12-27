@@ -10,6 +10,33 @@
 		vi. spread operator
 		vii. rest operator
 		viii. object destructuring
+		ix. import/export
+
+modules: a file api which expose the exportable members of one file to other files (a file===module)
+module format:
+	a. import/export
+	b. common js
+	c. amd
+	d. umd (universal module definition)
+module loader:
+	a. requirejs
+	b. systemjs
+
+issues:
+1. all new features that have been used in JS application, might not be interpreted properly by older browser
+2. import/export (modules) are not understood by browser 
+
+solution:
+1. write your code using all new features, but then get code converted into older version of JS (transpilation). load that older version of JS in browser through HTML file
+
+2. supply a s/w which understands modules in JS in browser environment (module loader) through HTML file
+	ex: requirejs
+   Note: requirejs module loader expects that modules in JS to be written in AMD (asynchronous module definition) format. get your import/export module format converted to AMD format.
+
+transpiler s/w:
+	babel: written using Node JS (server side JS based framework)
+	a. convert ES6+ (latest versionof JS) code into older version of JS. 
+	b. can get your modular JS code into AMD for browser
 
 2. React 
 	a. SPA vs server-side framework

@@ -1,4 +1,6 @@
-class Developer extends Employee {
+import { Employee } from "./employee";
+
+export class Developer extends Employee {
     #incentivepay
     constructor(name, id, basic, da, hra, incentive) {
         super(name, id, basic, da, hra)
@@ -9,3 +11,6 @@ class Developer extends Employee {
         this.totalsalary += this.#incentivepay
     }
 }
+/**
+ * { Developer:Developer}
+ */

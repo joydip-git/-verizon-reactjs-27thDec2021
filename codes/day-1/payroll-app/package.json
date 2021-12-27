@@ -1,0 +1,24 @@
+{
+  "name": "payroll-app",
+  "version": "1.0.0",
+  "description": "a simple browser app to calculate salary",
+  "main": "./src/index.js",
+  "scripts": {
+    "transpile": "babel src --out-dir dist",
+    "load": "lite-server"
+  },
+  "keywords": [
+    "module",
+    "class",
+    "es6"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-transform-modules-amd": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "lite-server": "^2.6.1"
+  }
+}

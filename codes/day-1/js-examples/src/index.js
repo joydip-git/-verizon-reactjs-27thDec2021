@@ -1,22 +1,20 @@
-//constructor function
-function person(name, id, salary) {
-    //value properties
-    this.personName = name
-    this.personId = id
-    this.personSalary = salary
+class Person {
+    constructor(name, id, salary) {
+        //data members
+        this.personName = name
+        this.personId = id
+        this.personSalary = salary
+    }
 
-    //functional property
-    // this.print = function () {
-    //     return this.personName + ' ' + this.personId + ' ' + this.personSalary
-    // }
+    //method
+    print() {
+        return this.personName + ' ' + this.personId + ' ' + this.personSalary
+    }
 }
-person.prototype.print = function () {
-    return this.personName + ' ' + this.personId + ' ' + this.personSalary
-}
-console.log(person.prototype)
+//console.log(Person.prototype)
 
-const anilPerson = new person('anil', 1, 1000)
-const sunilPerson = new person('sunil', 2, 2000)
+const anilPerson = new Person('anil', 1, 1000)
+const sunilPerson = new Person('sunil', 2, 2000)
 
 //accessing value properties
 console.log(anilPerson.personName)

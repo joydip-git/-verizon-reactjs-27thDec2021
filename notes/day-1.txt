@@ -4,6 +4,9 @@
 	c. new features
 		i. let 
 		ii. const
+		iii. class, constructor, extends, super
+		iv. arrow function
+		v. string imterpolation/templated string
 
 2. React 
 	a. SPA vs server-side framework

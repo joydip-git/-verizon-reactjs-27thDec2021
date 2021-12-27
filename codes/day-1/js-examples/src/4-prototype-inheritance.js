@@ -1,4 +1,4 @@
-//constructor function
+//2. constructor function
 function person(name, id, salary) {
     //value properties
     this.personName = name

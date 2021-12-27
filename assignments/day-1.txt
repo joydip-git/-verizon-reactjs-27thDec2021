@@ -1,0 +1,20 @@
+1. developer:
+	a. value attributes: name, id, basicpay, dapay, hrapay, totalsalary, incentivepay
+	b. functional attribute: calulate salary of developer
+		logic - add basic, da, hra and incentive and store the total salary in totalsalary
+		args - none
+		return type: void
+
+2. hr:
+	a. value attributes: name, id, basicpay, dapay, hrapay, totalsalary, gratuitypay
+	b. functional attribute: calulate salary of an hr
+		logic - add basic, da, hra and gratuity and store the total salary in totalsalary
+		args - none
+		return type: void
+
+3. create an array to store references of some sample developer and hr objects (2 each)
+4. iterate through the array and calculate salary of every employee and display the same, along with name of the employee
+5. filter the array and disply the name and salary of those employees whose total salary is greater than 10000
+6. sort the employees in the array based on the name of the employees and display
+
+Note: you can create any additional class for this if you want

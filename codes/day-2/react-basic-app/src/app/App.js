@@ -12,9 +12,8 @@ function App() {
 
   // const welcomeElement = Welcome({ welcomeData: welcomeMessage, paraHandler:FnRef })
   // const introElement = Introduction({ introData: introMessage })
-
-
   //  const calcObj = new Calculation()
+  
   return (
     <div className="App">
       <Welcome welcomeData={welcomeMessage} paraHandler={pHoverHandler} />

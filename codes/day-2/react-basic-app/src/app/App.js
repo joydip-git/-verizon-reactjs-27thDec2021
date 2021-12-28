@@ -1,3 +1,4 @@
+import Calculation from '../components/calculation/Calculation';
 import Introduction from '../components/introduction/Introduction';
 import Welcome from '../components/welcome/Welcome';
 import './App.css';
@@ -11,11 +12,17 @@ function App() {
 
   // const welcomeElement = Welcome({ welcomeData: welcomeMessage, paraHandler:FnRef })
   // const introElement = Introduction({ introData: introMessage })
+
+
+  //  const calcObj = new Calculation()
   return (
     <div className="App">
       <Welcome welcomeData={welcomeMessage} paraHandler={pHoverHandler} />
       <br />
       <Introduction introData={introMessage} />
+      <br />
+      <br />
+      <Calculation />
     </div>
   );
 }

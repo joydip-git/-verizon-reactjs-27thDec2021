@@ -1,0 +1,16 @@
+1. SPA
+	a. single web page with complete HTML
+	b. other designs along with their code file (JS) are known as components
+	c. all components together creates the complete app design
+	d. since the code is written in JS, the entire app is served to the client on the first request
+	e. the main HTML file gets parsed and then displayed in the browser and one or the component design is displayed in that single HTML page body tag
+
+2. React JS, Angular, Vue
+	a. React JS is a library to create client-side SPA application
+	b. good for creating view layer of any application
+	c. it helps you to create reusable components
+	
+3. create a react app without any tool
+4. create react app with a tool (create-react-app)
+
+component: design + code (data to be displayed in the design and functions that response to the design control events)

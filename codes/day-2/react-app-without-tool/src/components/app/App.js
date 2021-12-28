@@ -4,17 +4,25 @@ import Welcome from "../welcome/Welcome";
 
 export default function App() {
 
+    /*
     const welcomeReactDesign = Welcome()
-    const introReatDesign = Introduction()
+    const introReactDesign = Introduction()
 
     const brReactElement = React.createElement('br')
 
     const mainReactElement = React.createElement(
         'div',
         { id: 'appDiv' },
-        [welcomeReactDesign, brReactElement, introReatDesign]
+        [welcomeReactDesign, brReactElement, introReactDesign]
     )
-
+    */
+    const mainReactElement = (
+        <div id='appDiv'>
+            <Welcome />
+            <br />
+            <Introduction />
+        </div>
+    )
     return mainReactElement
 }
 

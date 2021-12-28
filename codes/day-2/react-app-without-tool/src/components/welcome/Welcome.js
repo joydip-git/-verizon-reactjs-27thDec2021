@@ -16,6 +16,7 @@ function Welcome() {
     }
 
     //desgn
+    /*
     const paraReactElement = React.createElement(
         'p',
         {
@@ -24,7 +25,14 @@ function Welcome() {
             onMouseOver: pHoverHandler
         },
         welcomeMessage)
-
+        */
+    const paraReactElement = (
+        <p id='welcomePara' style={pStyle} onMouseOver={pHoverHandler}>
+            {
+                welcomeMessage
+            }
+        </p>
+    )
     return paraReactElement
 }
 

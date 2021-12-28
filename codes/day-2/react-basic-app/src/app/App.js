@@ -1,5 +1,6 @@
 import Calculation from '../components/calculation/Calculation';
 import Introduction from '../components/introduction/Introduction';
+import Records from '../components/records/Records';
 import Welcome from '../components/welcome/Welcome';
 import './App.css';
 
@@ -13,7 +14,7 @@ function App() {
   // const welcomeElement = Welcome({ welcomeData: welcomeMessage, paraHandler:FnRef })
   // const introElement = Introduction({ introData: introMessage })
   //  const calcObj = new Calculation()
-  
+
   return (
     <div className="App">
       <Welcome welcomeData={welcomeMessage} paraHandler={pHoverHandler} />
@@ -22,6 +23,9 @@ function App() {
       <br />
       <br />
       <Calculation />
+      <br />
+      <br />
+      <Records />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Result from '../sample/Result'
 
 const initialState = {
     result: 0,
@@ -21,7 +22,7 @@ export default class Calculation extends Component {
             // this.render()
 
             const updatedState = {
-                firstValue:parseInt(val)
+                firstValue: parseInt(val)
             }
             // const newState = {
             //     ...this.state,
@@ -33,6 +34,7 @@ export default class Calculation extends Component {
             // console.log(this.state)
         }
     }
+
     updateSecondValue = (e) => {
         const val = e.target.value
         console.log(val)
@@ -55,8 +57,15 @@ export default class Calculation extends Component {
             }
         )
     }
+
     render() {
         console.log('calculation rendered')
+        //let resultDesign;
+        // if (this.state.result > 0) {
+        //     resultDesign = <Result resultValue={this.state.result} />
+        // } else {
+        //     resultDesign = <span>No result yet...click add button</span>
+        // }
         return (
             <div>
                 1st Value: &nbsp;<input type='text' onChange={this.updateFirstValue} value={this.state.firstValue} />
@@ -68,8 +77,16 @@ export default class Calculation extends Component {
                 <br />
                 <button onClick={this.updateResult}>Add</button>
                 <br />
+                {
+                    /* {
+                     resultDesign
+                    }*/
 
-                <span>Result: &nbsp; {this.state.result}</span>
+                    /* this.state.result > 0 && <Result resultValue={this.state.result} /> */
+
+                    this.state.result > 0 ? <Result resultValue={this.state.result} /> : <span>No result yet...click add button</span>
+                }
+
             </div>
         )
     }

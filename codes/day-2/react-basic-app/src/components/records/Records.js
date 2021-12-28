@@ -1,21 +1,20 @@
 import React from 'react'
 
 const people = [{
-    name: 'anil',
-    id: 1,
-    salary: 1000
-}, {
     name: 'sunil',
     id: 2,
     salary: 2000
+}, {
+    name: 'anil',
+    id: 1,
+    salary: 1000
 }]
 
 const Records = () => {
-
     const allRows = people.map(
-        (person) => {
+        (person, index) => {
             return (
-                <tr>
+                <tr key={person.id}>
                     <td>{person.name}</td>
                     <td>{person.id}</td>
                     <td>{person.salary}</td>

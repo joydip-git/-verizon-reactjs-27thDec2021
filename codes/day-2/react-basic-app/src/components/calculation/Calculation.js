@@ -86,7 +86,6 @@ export default class Calculation extends Component {
 
                     this.state.result > 0 ? <Result resultValue={this.state.result} /> : <span>No result yet...click add button</span>
                 }
-
             </div>
         )
     }

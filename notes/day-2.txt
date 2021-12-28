@@ -14,3 +14,9 @@
 4. create react app with a tool (create-react-app)
 
 component: design + code (data to be displayed in the design and functions that response to the design control events)
+
+React Features:
+1. props
+2. state
+3. conditional rendering
+4. list of elements

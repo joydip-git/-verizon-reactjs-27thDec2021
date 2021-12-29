@@ -5,7 +5,7 @@ import ProductTable from '../product-table/ProductTable';
 import ProductDetail from '../product-detail/ProductDetail';
 
 const initialState = {
-    val: 0,
+    //val: 0,
     selectedProductId: 0,
     loadingComplete: false,
     errorMessage: '',
@@ -37,7 +37,7 @@ export default class ProductList extends Component {
         } else {
             design = (
                 <div className='container'>
-                    Val:&nbsp;{this.state.val}
+                    {/* Val:&nbsp;{this.state.val}
                     <br />
                     <button onClick={
                         () => {
@@ -49,8 +49,8 @@ export default class ProductList extends Component {
                                 }
                             )
                         }
-                    }>Increase</button>
-                    <br/>
+                    }>Increase</button> */}
+                    <br />
                     <div className='panel panel-primary'>
                         <div className='panel panel-heading'>
                             {productRecords.length} Records(s) found...

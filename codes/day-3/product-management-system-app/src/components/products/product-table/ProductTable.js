@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './ProductTable.css'
 import PropTypes from "prop-types";
 import ProductRow from '../product-row/ProductRow';
@@ -41,6 +41,6 @@ ProductTable.propTypes = {
     products: PropTypes.array.isRequired,
     productIdHandler: PropTypes.func.isRequired
 }
-export default ProductTable
+export default memo(ProductTable)
 
 

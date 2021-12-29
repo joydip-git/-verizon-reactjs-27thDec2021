@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { getProductById } from "../../../services/productservice";
 
@@ -10,7 +10,7 @@ const initialState = {
     errorMessage: '',
     productInfo: undefined
 }
-export default class ProductDetail extends Component {
+export default class ProductDetail extends PureComponent {
 
     static propTypes = {
         selectedId: PropTypes.number.isRequired
@@ -23,8 +23,22 @@ export default class ProductDetail extends Component {
 
     state = initialState
 
+    /*
+    shouldComponentUpdate(newProps, newState) {
+        console.log('PD should update?')
+        // console.log('new props', newProps)
+        // console.log('prev props', this.props)
+        // console.log('new state', newState)
+        // console.log('prev state', this.state)
+        if (!this.state && (this.props.selectedId === newProps.selectedId || newState.productInfo.id === this.props.selectedId)) {
+            return false
+        }
+        return true
+    }
+    */
     render() {
         console.log('PD rendered')
+        // console.log('new state', this.state)
         const { loadingComplete, errorMessage, productInfo } = this.state
 
         let design;
@@ -39,14 +53,19 @@ export default class ProductDetail extends Component {
         }
         return design
     }
+
     componentDidMount() {
         console.log('PD mounted')
         this.fetchData()
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(oldProps, oldState) {
         console.log('PD updated')
+        if (this.props.selectedId !== oldProps.selectedId) {
+            this.fetchData()
+        }
     }
+
     fetchData = () => {
         getProductById(this.props.selectedId)
             .then(

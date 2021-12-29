@@ -1,0 +1,14 @@
+{
+  "name": "product-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "json-server --watch products.json -p 3001"
+  },
+  "keywords": [],
+  "author": "joydip",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

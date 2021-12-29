@@ -5,3 +5,25 @@
 5. forms and validation
 6. ref and dom
 7. higher order component
+
+RESTful API server APIs:
+
+URL						METHOD			ROUTE DATA/REQUEST DATA	
+---------------------------------------------------------------------------------------------------
+getting all records:
+http://localhost:3001/products			GET				NO
+
+getting a record:
+http://localhost:3001/products/{id}		GET			product id value
+
+add a new record
+http://localhost:3001/products			POST			product json object
+
+update an existing record
+http://localhost:3001/products/{id}		PUT		product id value, product json object
+
+delete an existing record
+http://localhost:3001/products/{id}		DELETE			product id value
+
+
+			

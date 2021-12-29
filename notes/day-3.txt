@@ -1,4 +1,4 @@
-1. React class component lifecycle
+1. React class component lifecycle: mounting (componentDidMount)
 2. accessing data from restful api using axios
 3. error handling
 4. how to stop unnecessary rendering of class and functional component
@@ -24,6 +24,8 @@ http://localhost:3001/products/{id}		PUT		product id value, product json object
 
 delete an existing record
 http://localhost:3001/products/{id}		DELETE			product id value
+
+React developer tools
 
 
 			

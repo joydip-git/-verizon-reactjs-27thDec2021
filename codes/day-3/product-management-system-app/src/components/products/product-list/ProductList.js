@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './ProductList.css'
 import { getProducts } from "../../../services/productservice";
+import ProductTable from '../product-table/ProductTable';
 
 const initialState = {
     loadingComplete: false,
@@ -25,40 +26,16 @@ export default class ProductList extends Component {
             design = <span>No records found</span>
         } else {
             design = (
-                <table>
-                    <thead className='headerRowStyle'>
-                        <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Rating</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            productRecords.map(
-                                (p) => {
-                                    return (
-                                        <tr key={p.id}>
-                                            <td>
-                                                <img className='imgStyle' src={p.imageUrl} alt='NA' title={p.productName} />
-                                            </td>
-                                            <td>
-                                                {p.productName}
-                                            </td>
-                                            <td>
-                                                {p.price}
-                                            </td>
-                                            <td>
-                                                {p.starRating}
-                                            </td>
-                                        </tr>
-                                    )
-                                }
-                            )
-                        }
-                    </tbody>
-                </table>
+                <div className='container'>
+                    <div className='panel panel-primary'>
+                        <div className='panel panel-heading'>
+                            {productRecords.length} Records(s) found...
+                        </div>
+                        <div className='panel panel-body'>
+                            <ProductTable products={productRecords} />
+                        </div>
+                    </div>
+                </div>
             )
         }
         return design
@@ -75,14 +52,6 @@ export default class ProductList extends Component {
                         errorMessage: '',
                         productRecords: resp.data
                     })
-
-                    // this.setState(
-                    //     (cs) => {
-                    //         return {
-                    //             val: cs.val + 1
-                    //         }
-                    //     }
-                    // )
                 },
                 (err) => {
                     this.setState({

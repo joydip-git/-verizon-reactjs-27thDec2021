@@ -1,6 +1,7 @@
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import Hero from './components/Hero';
+import Parent from './components/Parent';
 
 function App() {
   const logError = (errObject) => {
@@ -16,6 +17,8 @@ function App() {
       <ErrorBoundary logger={logError}>
         <Hero heroName='Joker' />
       </ErrorBoundary>
+      <br />
+      <Parent />
     </div>
   );
 }

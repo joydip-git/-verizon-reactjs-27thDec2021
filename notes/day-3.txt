@@ -2,9 +2,12 @@
 2. accessing data from restful api using axios
 3. error handling
 4. how to stop unnecessary rendering of class and functional component
+
 5. forms and validation
 6. ref and dom
 7. higher order component
+8. react hooks
+9. routing
 
 RESTful API server APIs:
 

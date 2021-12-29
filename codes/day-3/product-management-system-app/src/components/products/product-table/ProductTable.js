@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import ProductRow from '../product-row/ProductRow';
 
 const ProductTable = (props) => {
-    const { products } = props
+    console.log('PT rendered and mounted')
+    const { products, productIdHandler } = props
     let design = (
         <div className='table-responsive'>
             <table className='table'>
@@ -21,7 +22,11 @@ const ProductTable = (props) => {
                         products.map(
                             (p) => {
                                 return (
-                                    <ProductRow key={p.id} product={p} />
+                                    <ProductRow
+                                        key={p.id}
+                                        product={p}
+                                        selectedIdHandler={productIdHandler}
+                                    />
                                 )
                             }
                         )
@@ -33,7 +38,8 @@ const ProductTable = (props) => {
     return design
 }
 ProductTable.propTypes = {
-    products: PropTypes.array.isRequired
+    products: PropTypes.array.isRequired,
+    productIdHandler: PropTypes.func.isRequired
 }
 export default ProductTable
 

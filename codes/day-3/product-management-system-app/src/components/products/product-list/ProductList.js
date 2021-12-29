@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import './ProductList.css'
 import { getProducts } from "../../../services/productservice";
 import ProductTable from '../product-table/ProductTable';
+import ProductDetail from '../product-detail/ProductDetail';
 
 const initialState = {
+    selectedProductId: 0,
     loadingComplete: false,
     errorMessage: '',
     productRecords: []
@@ -14,9 +16,16 @@ export default class ProductList extends Component {
         this.state = initialState
         console.log('PL created')
     }
+
+    selectProductIdHandler = (pid) => {
+        this.setState({
+            selectedProductId: pid
+        })
+    }
+
     render() {
         console.log('PL rendered')
-        const { loadingComplete, errorMessage, productRecords } = this.state
+        const { loadingComplete, errorMessage, productRecords, selectedProductId } = this.state
         let design;
         if (!loadingComplete) {
             design = <span>Loading data...please wait</span>
@@ -32,9 +41,17 @@ export default class ProductList extends Component {
                             {productRecords.length} Records(s) found...
                         </div>
                         <div className='panel panel-body'>
-                            <ProductTable products={productRecords} />
+                            <ProductTable
+                                products={productRecords}
+                                productIdHandler={this.selectProductIdHandler}
+
+                            />
                         </div>
                     </div>
+                    <br />
+                    {
+                        selectedProductId > 0 && <ProductDetail selectedId={selectedProductId} />
+                    }
                 </div>
             )
         }

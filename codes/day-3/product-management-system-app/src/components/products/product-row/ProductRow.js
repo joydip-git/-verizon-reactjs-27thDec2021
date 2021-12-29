@@ -3,11 +3,21 @@ import PropTypes from 'prop-types'
 import './ProductRow.css'
 
 const ProductRow = (props) => {
-    const { product } = props
+    console.log('PROW rendered and mounted')
+    const { product, selectedIdHandler } = props
     return (
         <tr>
             <td>
-                <img className='imgStyle' src={product.imageUrl} alt='NA' title={product.productName} />
+                <img
+                    className='imgStyle'
+                    src={product.imageUrl}
+                    alt='NA'
+                    title={product.productName}
+                    onClick={
+                        () => {
+                            selectedIdHandler(product.id)
+                        }
+                    } />
             </td>
             <td>
                 {product.productName}
@@ -23,7 +33,8 @@ const ProductRow = (props) => {
 }
 
 ProductRow.propTypes = {
-    product: PropTypes.object.isRequired
+    product: PropTypes.object.isRequired,
+    selectedIdHandler: PropTypes.func.isRequired
 }
 
 export default ProductRow

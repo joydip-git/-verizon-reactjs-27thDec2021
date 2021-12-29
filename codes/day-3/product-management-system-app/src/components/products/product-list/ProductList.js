@@ -11,6 +11,7 @@ export default class ProductList extends Component {
     constructor() {
         super()
         this.state = initialState
+        console.log('PL created')
     }
     render() {
         console.log('PL rendered')
@@ -63,6 +64,9 @@ export default class ProductList extends Component {
         return design
     }
     componentDidMount() {
+        console.log('PL mounted')
+        // setTimeout(
+        // () => {
         getProducts()
             .then(
                 (resp) => {
@@ -71,6 +75,14 @@ export default class ProductList extends Component {
                         errorMessage: '',
                         productRecords: resp.data
                     })
+
+                    // this.setState(
+                    //     (cs) => {
+                    //         return {
+                    //             val: cs.val + 1
+                    //         }
+                    //     }
+                    // )
                 },
                 (err) => {
                     this.setState({
@@ -80,5 +92,7 @@ export default class ProductList extends Component {
                     })
                 }
             )
+        // }, 2000
+        //)
     }
 }

@@ -1,4 +1,26 @@
 1. ref and dom 
-2. form and validation
-3. HOC
-4. react hook
+2. HOC
+3. react hook
+4. form and validation
+
+I. accessing a react element from the same component code:
+Component (data and event handlers) ----> design elements
+what about reverse? (code of component wants to access design elements
+answer: use 'ref' property of react element
+        a. callback ref: set the ref to a callback function, where the reference of the HTML element will be passed
+	b. createRef: create an object of RefObj, by calling createRef() method and then oass the reference to ref property of the react element
+
+
+II. accessing a react component from the parent component code:
+Parent component (data and event handlers) -----> via props---> Nested component
+what about reverse? (parent wants to access members of nsted components)
+
+A. When the nested component is a class component:
+answer:
+	a. callback ref: set the ref property of class component to a callback function, where the reference of the component object will be passed
+	b. createRef: create an object of RefObj, by calling createRef() method and then pass the reference to ref property of the react class component
+
+B: When the nested component is a Functional component: (You CAN'T use the ref property of a functional component to set reference to an object of functional component, since THERE IS NO OBJECT ASSOCIATED WITH FUNCTIONAL COMPONENT)
+	a. callback ref: set the ref property of functional component to a callback function, where the reference of any element in the functional will be passed
+	b. createRef: create an object of RefObj, by calling createRef() method and then pass the reference to ref property of the react functional component, but the reference will be set to a react element inside the functional component
+	use forwardRef() in the functional component code

@@ -28,3 +28,48 @@ B: When the nested component is a Functional component: (You CAN'T use the ref p
 Higher Order Component: (HOC)
 ---------------------------------------
 design pattern
+
+
+React Hooks: API (functions)
+can be used in functional components, NOT in class components
+
+why should we learn react hooks?
+   a. disdavtanges of having class component
+	a. this
+	b. lifecycle
+		CDU(){
+		fetch data and set state
+		apply style
+		.......
+		}
+		CDM(){
+		....
+		}
+		CWU
+	c. state={
+			a:0,
+			b:false,
+			c: [],
+			d:'',
+			e:{}
+		 }
+	//state1=0, state2=false state3='' state4=[] state5={}
+
+	b. HOC:
+		a. class component lifecycle ovrelapping
+		b. every time getting a class component
+		c. extra coding
+		.....
+
+	<A x={0}/>-----> return <OC {...this.props}/>
+
+		d. otherHOC(forwardRef(comp))
+
+
+
+
+
+
+
+
+

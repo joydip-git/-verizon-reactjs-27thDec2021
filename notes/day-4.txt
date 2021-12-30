@@ -38,6 +38,7 @@ why should we learn react hooks?
 	a. this
 	b. lifecycle
 		CDU(){
+		//side effect causing code
 		fetch data and set state
 		apply style
 		.......
@@ -45,7 +46,8 @@ why should we learn react hooks?
 		CDM(){
 		....
 		}
-		CWU
+		CWU(){}
+		CDC()
 	c. state={
 			a:0,
 			b:false,
@@ -64,6 +66,28 @@ why should we learn react hooks?
 	<A x={0}/>-----> return <OC {...this.props}/>
 
 		d. otherHOC(forwardRef(comp))
+
+state hook: 
+	const [stateData, setStateData] = useState(initialState)
+
+
+lifecycle/effect hook:  useEffect()
+
+const [productsState, setProductsState] = useState({products: [], error:'', loading:true})
+
+useEffect(
+	()=>{
+		getProducts()
+			.then( 
+				(resp)=>{ 
+					setproducts({products:resp.data, error:'', loading:false}) 
+				}, 
+				(e)=>{
+					setproducts({products:[], error:e.message, loading:false}) 
+				}
+			)	
+	}
+)
 
 
 

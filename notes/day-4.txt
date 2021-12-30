@@ -24,3 +24,7 @@ B: When the nested component is a Functional component: (You CAN'T use the ref p
 	a. callback ref: set the ref property of functional component to a callback function, where the reference of any element in the functional will be passed
 	b. createRef: create an object of RefObj, by calling createRef() method and then pass the reference to ref property of the react functional component, but the reference will be set to a react element inside the functional component
 	use forwardRef() in the functional component code
+
+Higher Order Component: (HOC)
+---------------------------------------
+design pattern

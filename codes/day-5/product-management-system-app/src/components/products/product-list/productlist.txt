@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import './ProductList.css'
+import { getProducts } from "../../../services/productservice";
 import ProductTable from '../product-table/ProductTable';
 import ProductDetail from '../product-detail/ProductDetail';
 import handleError from '../../hoc/handleError';
 import { productListInitialState } from '../../../states/appStates';
-import { connect } from "react-redux";
-import { fetchProductsCallbackCreator } from "../../../redux/callbackcreators";
-// import { productsSuccessActionCreator, productsFailureActionCreator } from "../../../redux/actioncreators";
-//import { getProducts } from "../../../services/productservice";
 
 class ProductList extends Component {
     constructor() {
@@ -24,10 +21,9 @@ class ProductList extends Component {
 
     render() {
         console.log('PL rendered')
-        const { selectedProductId } = this.state
-        const { loading, errorMessage, productRecords } = this.props
+        const { loadingComplete, errorMessage, productRecords, selectedProductId } = this.state
         let design;
-        if (loading) {
+        if (!loadingComplete) {
             design = <span>Loading data...please wait</span>
         } else if (errorMessage !== '') {
             design = <span>{errorMessage}</span>
@@ -60,39 +56,23 @@ class ProductList extends Component {
     }
     componentDidMount() {
         console.log('PL mounted')
-        this.props.fetchProducts()
+        getProducts()
+            .then(
+                (resp) => {
+                    this.setState({
+                        loadingComplete: true,
+                        errorMessage: '',
+                        productRecords: resp.data
+                    })
+                },
+                (err) => {
+                    this.setState({
+                        loadingComplete: true,
+                        errorMessage: err.message,
+                        productRecords: []
+                    })
+                }
+            )
     }
 }
-
-const mapStateToProps = (stateMap) => {
-    return {
-        loading: stateMap.allProductsState.loading,
-        errorMessage: stateMap.allProductsState.errorMessage,
-        productRecords: stateMap.allProductsState.productRecords
-    }
-}
-const mapDispatchToProps = (dispatchFnRef) => {
-    return {
-        fetchProducts: () => {
-            const fetchProductsCallback = fetchProductsCallbackCreator()
-            dispatchFnRef(fetchProductsCallback)
-            // getProducts()
-            //     .then(
-            //         (resp) => {
-            //             const successAction = productsSuccessActionCreator(resp.data)
-            //             dispatchFnRef(successAction)
-            //         },
-            //         (err) => {
-            //             const failureAction = productsFailureActionCreator(err.message)
-            //             dispatchFnRef(failureAction)
-            //         }
-            //     )
-        }
-    }
-}
-// const connectTo = connect(mapStateToProps, mapDispatchToProps)
-// ProductList = connectTo(ProductList)
-// ProductList = handleError(ProductList, (errorObj) => console.log(errorObj))
-// export default ProductList
-
-export default handleError(connect(mapStateToProps, mapDispatchToProps)(ProductList), (errorObj) => console.log(errorObj))
+export default handleError(ProductList, (errorObj) => console.log(errorObj))

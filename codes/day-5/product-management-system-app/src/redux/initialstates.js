@@ -1,5 +1,5 @@
 export const productsInitalState = {
-    products: [],
+    productRecords: [],
     loading: true,
     errorMessage: ''
 }

@@ -8,7 +8,7 @@ export const productsReducer = (state = InitialStates.productsInitalState, actio
             newState = {
                 ...state,
                 loading: false,
-                products: action.data,
+                productRecords: action.data,
                 errorMessage: ''
             }
             break;
@@ -17,7 +17,7 @@ export const productsReducer = (state = InitialStates.productsInitalState, actio
             newState = {
                 ...state,
                 loading: false,
-                products: [],
+                productRecords: [],
                 errorMessage: action.data
             }
             break;

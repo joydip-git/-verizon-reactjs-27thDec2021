@@ -89,6 +89,20 @@ useEffect(
 	}
 )
 
+createRef()
+
+this.nameElementRef=null
+setElementRef=(elementRef)=>{
+	this.nameElementRef=elementRef
+}
+<Input ref={this.setElementRef}/>
+
+useRef()   ---> RefObject()---> reference of anything
+
+useCallback()
+
+useMemo()
+
 
 
 

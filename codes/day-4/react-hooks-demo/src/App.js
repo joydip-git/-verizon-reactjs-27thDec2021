@@ -1,6 +1,7 @@
 import './App.css';
+import Click from './components/Click';
 import Parent from './components/Parent';
-import Sample from './components/Sample';
+//import Sample from './components/Sample';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         Effect Hook Example
         <br />
         <Parent />
+        <br />
+        <br />
+        <Click />
       </div>
     </div>
   );

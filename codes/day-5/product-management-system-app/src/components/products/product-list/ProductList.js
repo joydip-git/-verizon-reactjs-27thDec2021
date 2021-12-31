@@ -4,14 +4,8 @@ import { getProducts } from "../../../services/productservice";
 import ProductTable from '../product-table/ProductTable';
 import ProductDetail from '../product-detail/ProductDetail';
 import handleError from '../../hoc/handleError';
+import { productListInitialState } from '../../../states/appStates';
 
-const productListInitialState = {
-    selectedProductId: 0,
-    loadingComplete: false,
-    errorMessage: '',
-    productRecords: []
-}
-//export default class ProductList extends Component {
 class ProductList extends Component {
     constructor() {
         super()

@@ -49,6 +49,16 @@
       "price": 35.95,
       "starRating": 4,
       "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    },
+    {
+      "id": 20,
+      "productName": "Del XPS",
+      "productCode": "DELL-1234",
+      "description": "new product from dell",
+      "releaseDate": "1/1/2020",
+      "starRating": 5,
+      "price": 100000,
+      "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     }
   ]
 }

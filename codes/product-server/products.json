@@ -59,6 +59,36 @@
       "starRating": 5,
       "price": 100000,
       "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+    },
+    {
+      "id": 21,
+      "productName": "Test",
+      "productCode": "Test-1234",
+      "description": "sample",
+      "releaseDate": "1/1/2021",
+      "starRating": 4,
+      "price": 10,
+      "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    },
+    {
+      "id": 23,
+      "productName": "abcd",
+      "productCode": "abcd-1234",
+      "description": "acasjhcgAG",
+      "releaseDate": "1/1/2021",
+      "starRating": 3,
+      "price": 10,
+      "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    },
+    {
+      "id": 12,
+      "productName": "gfxhaf",
+      "productCode": "asbaskb",
+      "description": "asxxvjas",
+      "releaseDate": "1/1/2021",
+      "starRating": 1,
+      "price": 10,
+      "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
   ]
 }

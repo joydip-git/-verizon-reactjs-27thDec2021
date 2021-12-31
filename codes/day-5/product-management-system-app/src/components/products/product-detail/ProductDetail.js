@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 import { useSelector, useDispatch } from "react-redux";
+import { Link, useParams } from 'react-router-dom';
 import { fetchProductByIdCallbackCreator } from '../../../redux/callbackcreators'
 
-function ProductDetail(props) {
-    const { selectedId } = props
+function ProductDetail() {
+    //const { selectedId } = props
+    const { id: selectedId } = useParams()
 
     const loadingComplete = useSelector((stateMap) => stateMap.singleProductState.loadingComplete)
 
@@ -37,9 +39,11 @@ function ProductDetail(props) {
 
                         Details of: &nbsp;&nbsp;{productInfo.productName}
 
-                        <button type='button' className='btn btn-primary' style={{ float: 'right' }}>
-                            Edit
-                        </button>
+                        <Link to={`/products/update/${productInfo.id}`}>
+                            <button type='button' className='btn btn-primary' style={{ float: 'right' }}>
+                                Edit
+                            </button>
+                        </Link>
                     </div>
 
                     <div className='panel-body'>
@@ -79,18 +83,19 @@ function ProductDetail(props) {
 
                     <div className='panel-footer'>
 
-                        <button type='button' className='btn btn-default' >
-                            <i className='glyphicon glyphicon-chevron-left'></i> Back
-                        </button>
+                        <Link to='/products'>
+                            <button type='button' className='btn btn-default' >
+                                <i className='glyphicon glyphicon-chevron-left'></i> Back
+                            </button>
+                        </Link>
                     </div>
                 </div >
             </div>
         )
     }
     return design
-
 }
-ProductDetail.propTypes = {
-    selectedId: PropTypes.number.isRequired
-}
+// ProductDetail.propTypes = {
+//     selectedId: PropTypes.number.isRequired
+// }
 export default ProductDetail

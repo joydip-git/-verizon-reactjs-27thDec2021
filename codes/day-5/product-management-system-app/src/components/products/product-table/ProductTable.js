@@ -5,7 +5,8 @@ import ProductRow from '../product-row/ProductRow';
 
 const ProductTable = (props) => {
     console.log('PT rendered and mounted')
-    const { products, productIdHandler } = props
+    //const { products, productIdHandler } = props
+    const { products } = props
     let design = (
         <div className='table-responsive'>
             <table className='table'>
@@ -25,7 +26,6 @@ const ProductTable = (props) => {
                                     <ProductRow
                                         key={p.id}
                                         product={p}
-                                        selectedIdHandler={productIdHandler}
                                     />
                                 )
                             }
@@ -39,8 +39,15 @@ const ProductTable = (props) => {
 }
 ProductTable.propTypes = {
     products: PropTypes.array.isRequired,
-    productIdHandler: PropTypes.func.isRequired
+    //productIdHandler: PropTypes.func.isRequired
 }
 export default memo(ProductTable)
+
+
+/* <ProductRow
+                                    key={p.id}
+                                    product={p}
+                                    selectedIdHandler={productIdHandler}
+                                /> */
 
 

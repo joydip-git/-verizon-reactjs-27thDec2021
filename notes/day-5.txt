@@ -6,3 +6,32 @@
 	: const value = useContext(contxtObj)
 2. redux
 3. routing
+
+localhost:3000                   --> Home
+localhost:3000/home              --> Home
+localhost:3000/products          --> ProductList
+localhost:3000/products/1        --> ProductDetail
+localhost:3000/products/add      --> AddProduct
+localhost:3000/products/update/1 --> UpdateProduct
+anything else			 --> PageNotFound (page not found)
+
+
+index.html 
+
+client-side routing:
+router engine: will look for URL change in the browser or will write the URL in the browser and load the corresponding component in the index.html
+route: path, component (element)
+complete collection of routes should be given to the router engine
+
+button: Home 
+Link component
+
+3rd party package for routing:
+react-router, react-router-dom
+
+router engine: BrowserRouter, HashRouter and MemoryRouter (React Native App)
+
+http://..../#/home
+
+http://.../products/2
+pushState API history, location etc....

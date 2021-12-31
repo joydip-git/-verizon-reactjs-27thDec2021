@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './ProductList.css'
 import ProductTable from '../product-table/ProductTable';
-import ProductDetail from '../product-detail/ProductDetail';
+//import ProductDetail from '../product-detail/ProductDetail';
 import handleError from '../../hoc/handleError';
-import { productListInitialState } from '../../../states/appStates';
+//import { productListInitialState } from '../../../states/appStates';
 import { connect } from "react-redux";
 import { fetchProductsCallbackCreator } from "../../../redux/callbackcreators";
 // import { productsSuccessActionCreator, productsFailureActionCreator } from "../../../redux/actioncreators";
@@ -12,19 +12,19 @@ import { fetchProductsCallbackCreator } from "../../../redux/callbackcreators";
 class ProductList extends Component {
     constructor() {
         super()
-        this.state = productListInitialState
+        //this.state = productListInitialState
         console.log('PL created')
     }
 
-    selectProductIdHandler = (pid) => {
-        this.setState({
-            selectedProductId: pid
-        })
-    }
+    // selectProductIdHandler = (pid) => {
+    //     this.setState({
+    //         selectedProductId: pid
+    //     })
+    // }
 
     render() {
         console.log('PL rendered')
-        const { selectedProductId } = this.state
+        //const { selectedProductId } = this.state
         const { loading, errorMessage, productRecords } = this.props
         let design;
         if (loading) {
@@ -43,16 +43,18 @@ class ProductList extends Component {
                             </h4>
                         </div>
                         <div className='panel panel-body'>
-                            <ProductTable
+                            {/* <ProductTable
                                 products={productRecords}
                                 productIdHandler={this.selectProductIdHandler}
-                            />
+                            /> */}
+                            <ProductTable
+                                products={productRecords} />
                         </div>
                     </div>
-                    <br />
+                    {/* <br />
                     {
                         selectedProductId > 0 && <ProductDetail selectedId={selectedProductId} />
-                    }
+                    } */}
                 </div>
             )
         }

@@ -16,18 +16,31 @@
 //export default App;
 
 
-import AddProduct from '../components/products/add-product/AddProduct';
-import ProductList from '../components/products/product-list/ProductList';
 import './App.css';
+import RouteGenerator from '../routes/RouteGenerator';
+import DashBoard from '../components/common/dashboard/DashBoard';
+import { Fragment } from 'react';
+
 function App() {
   return (
-    <div>
-      <ProductList />
-      <br />
-      <br />
-      <AddProduct />
-    </div>
+    <Fragment>
+      <DashBoard />
+      <RouteGenerator />
+    </Fragment>
+    // <Routes>
+    //   <Route path='/' element={<Home />} />
+    //   <Route path='/home' element={<Home />} />
+    //   <Route path='/products' element={<ProductList />} />
+    //   <Route path='/products/:id' element={<ProductDetail />} />
+    //   <Route path='/products/add' element={<AddProduct />} />
+    //   <Route path='/products/update/:id' element={<UpdateProduct />} />
+    //   <Route path='*' element={<PageNotFound />} />
+    // </Routes>
   );
 }
 
 export default App;
+
+// function Frag(props) {
+//   return props.children
+// }

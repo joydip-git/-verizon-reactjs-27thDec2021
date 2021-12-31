@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { addProduct } from "../../../services/productservice";
 
 const addProductInitialState = {
@@ -13,6 +14,7 @@ const addProductInitialState = {
 }
 const AddProduct = () => {
 
+    const navigate = useNavigate()
     const [productState, setProductState] = useState(addProductInitialState)
 
     const updateProductStateHandler = (propName, newValue) => {
@@ -27,7 +29,8 @@ const AddProduct = () => {
             .then(
                 (resp) => {
                     if (resp.status === 201) {
-                        window.alert('recorda added')
+                        window.alert('record added')
+                        navigate('/products')
                     }
                 },
                 (err) => {

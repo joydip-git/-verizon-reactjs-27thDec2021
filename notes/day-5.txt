@@ -1,3 +1,8 @@
 1. context
+	: createConext(default value)
+	: <contxtObj.Provider value={}><comp /></contxtObj.Provider>
+	: static contextType=contxObj, this.context (class component)
+	: <contxtObj.Consumer>{ (value)=>{return <element />}</contxtObj.Consumer> (functional component)
+	: const value = useContext(contxtObj)
 2. redux
 3. routing

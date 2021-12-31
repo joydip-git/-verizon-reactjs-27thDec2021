@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { getProductById } from "../../../services/productservice";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProductByIdCallbackCreator } from '../../../redux/callbackcreators'
+import { productByIdFailureActionCreator, productByIdSuccessActionCreator } from "../../../redux/actioncreators";
 
 function ProductDetail(props) {
     const { selectedId } = props
@@ -14,10 +15,23 @@ function ProductDetail(props) {
 
     const dispatchFnRef = useDispatch()
 
+    const fetchData = () => {
+        getProductById(selectedId)
+            .then(
+                (resp) => {
+                    const successAction = productByIdSuccessActionCreator(resp.data)
+                    dispatchFnRef(successAction)
+                },
+                (err) => {
+                    const failureAction = productByIdFailureActionCreator(err.message)
+                    dispatchFnRef(failureAction)
+                }
+            )
+    }
+
     useEffect(
         () => {
-            const fetchProductByIdCallback = fetchProductByIdCallbackCreator(selectedId)
-            dispatchFnRef(fetchProductByIdCallback)
+            fetchData()
         },
         [selectedId]
     )
